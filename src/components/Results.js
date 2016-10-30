@@ -1,5 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+var Link = require('react-router').Link;
 var styles = require('../styles');
 var UserDetails = require('./UserDetails');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
@@ -23,6 +24,13 @@ function Results(props) {
             info={props.playersInfo[losingIndex]}
           />
         </UserDetailsWrapper>
+      </div>
+      <div className="col-sm-12" style={styles.space}>
+        <Link to='/playerOne'>
+          <button type='button' className='btn btn-lg btn-danger'>
+            Start over
+          </button>
+        </Link>
       </div>
     </div>
   )
