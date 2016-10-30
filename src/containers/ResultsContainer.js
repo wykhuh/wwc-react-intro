@@ -9,6 +9,11 @@ var ResultsContainer = React.createClass({
     }
   },
 
+  componentDidMount: function() {
+    // this.props.location.state.playersInfo
+    console.log(this.props)
+  },
+
   render: function(){
     return(
       <Results
