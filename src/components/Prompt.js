@@ -1,7 +1,16 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 var transparentBg = require('../styles').transparentBg;
 
 var Prompt = React.createClass({
+  // propTypes are the props that should be passed into the component
+  propTypes: {
+    header: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    onSubmitUser: PropTypes.func.isRequired,
+    onUpdateUser: PropTypes.func.isRequired
+  },
+
   render: function() {
     return(
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={transparentBg}>
