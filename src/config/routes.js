@@ -9,6 +9,7 @@ var IndexRoute = ReactRouter.IndexRoute;
 
 var Main = require('../components/Main');
 var Home = require('../components/Home');
+var PromptContainer = require('../containers/PromptContainer');
 
 // react-router works by mapping the url to a component.
 // we will always render Main.
@@ -18,6 +19,8 @@ var Home = require('../components/Home');
 var routes = (
   <Router history={browserHistory}>
     <Route path='/' component={Main}>
+      <Route path='playerOne' component={PromptContainer}/>
+      <Route path='playerTwo/:playerOne' component={PromptContainer}/>
       <IndexRoute component={Home} />
     </Route>
   </Router>
