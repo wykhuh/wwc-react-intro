@@ -20,11 +20,11 @@ var helpers = {
     .then(function(results){
       return [results[0].data, results[1].data]
     })
+    // if there are any errors, log the errors
+    .catch(function(err){
+      console.warn('error in getPlayersInfo', err)
+    })
   }
 };
-
-// return axios.all(players.map(function (player) {
-//   return getUserInfo(player);
-// }))
 
 module.exports = helpers;
