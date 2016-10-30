@@ -5,8 +5,8 @@ var UserDetails = require('./UserDetails');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
 
 function Results(props) {
-  var winningIndex = 0;
-  var losingIndex = 1;
+  var winningIndex = props.scores[0] > props.scores[1] ? 0 : 1;
+  var losingIndex = winningIndex === 0 ? 1 : 0;
   return(
     <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
       <h1>Results</h1>
