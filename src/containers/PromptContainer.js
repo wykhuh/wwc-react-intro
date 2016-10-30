@@ -2,6 +2,15 @@ var React = require('react');
 var transparentBg = require('../styles').transparentBg;
 
 var PromptContainer = React.createClass({
+  // user getInitialState to give a component state
+  getInitialState: function() {
+    // return an object that has all the state properties
+    return {
+      username: ''
+    }
+  },
+
+
   render: function() {
     return(
       <div className="jumbotron col-sm-6 col-sm-offset-3 text-center" style={transparentBg}>
