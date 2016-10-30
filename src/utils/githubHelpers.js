@@ -16,8 +16,9 @@ var helpers = {
     // then axios.all().then() is going to run
     return axios.all(
       [getUserInfo(players[0]), getUserInfo(players[1])]
-    ).then(function(info){
-      console.log(info);
+    )
+    .then(function(results){
+      return [results[0].data, results[1].data]
     })
   }
 };

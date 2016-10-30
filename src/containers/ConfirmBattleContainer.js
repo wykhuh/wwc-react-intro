@@ -16,7 +16,10 @@ var ConfirmBattleContainer = React.createClass({
   // then connect to github to get info for each player
   componentDidMount: function() {
     var query = this.props.location.query;
-    githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo]);
+    githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
+      .then(function(players){
+        console.log('players', players)
+      });
   },
 
   render: function() {
