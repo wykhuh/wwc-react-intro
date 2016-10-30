@@ -20,6 +20,13 @@ function StartOver () {
 
 
 function Results(props) {
+  // is isLoading is true
+  if(props.isLoading === true) {
+    return(
+      <p>Loading</p>
+    )
+  }
+
   // if results are tied
   if(props.scores[0] === props.scores[1] ) {
     return (
