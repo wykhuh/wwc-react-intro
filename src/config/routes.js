@@ -5,17 +5,20 @@ var Route = ReactRouter.Route;
 // need to have history for the current version of the router.
 // use browserHistory to get paths like site.com/home
 var browserHistory = ReactRouter.browserHistory;
+var IndexRoute = ReactRouter.IndexRoute;
 
 var Main = require('../components/Main');
 var Home = require('../components/Home');
 
 // react-router works by mapping the url to a component.
 // we will always render Main.
-// when on /home, render Main and Home
+
+// IndexRoute is the active route when none of the outer routes match.
+// Home is active when none of the other routes match
 var routes = (
   <Router history={browserHistory}>
     <Route path='/' component={Main}>
-      <Route path='/home' component={Home}></Route>
+      <IndexRoute component={Home} />
     </Route>
   </Router>
 );
