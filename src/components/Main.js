@@ -5,8 +5,7 @@ var Main = React.createClass({
     // this component will render "Hello from Main" and any nestec components
     // this.props.children refers to nested component
     return(
-      <div>
-        Hello from Main
+      <div className="main-container">
         {this.props.children}
       </div>
     )
