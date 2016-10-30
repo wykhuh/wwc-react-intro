@@ -1,5 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+var Link = require('react-router').Link;
 var styles = require('../styles');
 
 function ConfirmBattle (props) {
@@ -19,10 +20,18 @@ function ConfirmBattle (props) {
       </div>
       <div className='col-sm-8 col-sm-offset-2'>
         <div className='col-sm-12' style={styles.space}>
-          Intitiate Battle
-          </div>
+          {/* when button is clicked, execute props.onInitiateBattle */}
+          <button type='button' className="btn btn-lg btn-success" onClick={props.onInitiateBattle}>
+            Intitiate Battle
+          </button>
+        </div>
         <div className='col-sm-12' style={styles.space}>
-          Reselect Players
+          {/* react router <Link> allows use to form a link to a path */}
+          <Link to='/playerOne'>
+            <button type='button' className="btn btn-lg btn-danger">
+              Reselect Players
+            </button>
+          </Link>
         </div>
       </div>
     </div>
