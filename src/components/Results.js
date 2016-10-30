@@ -6,6 +6,22 @@ var UserDetails = require('./UserDetails');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
 
 function Results(props) {
+  // if results are tied
+  if(props.scores[0] === props.scores[1] ) {
+    return (
+      <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
+        <h1>It's a tie</h1>
+        <div className="col-sm-12" style={styles.space}>
+          <Link to='/playerOne'>
+            <button type='button' className='btn btn-lg btn-danger'>
+              Start over
+            </button>
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
   var winningIndex = props.scores[0] > props.scores[1] ? 0 : 1;
   var losingIndex = winningIndex === 0 ? 1 : 0;
   return(
