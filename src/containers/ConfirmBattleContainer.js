@@ -2,6 +2,15 @@ var React = require('react');
 var ConfirmBattle = require('../components/ConfirmBattle');
 
 var ConfirmBattleContainer = React.createClass({
+  getInitialState: function() {
+    return {
+      // it take sometime to connect to github api, so add isLoading flag
+      isLoading: true,
+      // playersInfo is the info we get from the github api
+      playersInfo: []
+   }
+  },
+
   // after component loads, grab playerOne and playerTwo from url.
   // then connect to github to get info for each player
   componentDidMount: function() {
@@ -11,7 +20,10 @@ var ConfirmBattleContainer = React.createClass({
 
   render: function() {
     return (
-      <ConfirmBattle />
+      <ConfirmBattle
+        isLoading={this.state.isLoading}
+        playersInfo={this.state.playersInfo}
+      />
     );
   }
 
