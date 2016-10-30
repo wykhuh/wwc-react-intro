@@ -10,6 +10,13 @@ var PromptContainer = React.createClass({
     }
   },
 
+  onUpdateUser: function(e) {
+    // update the state using this.setState
+    this.setState({
+      // e.target.value is what peope enter in the input field
+      username: e.target.value
+    })
+  },
 
   render: function() {
     return(
@@ -22,6 +29,10 @@ var PromptContainer = React.createClass({
               <input
                 type="text"
                 className="form-control"
+                // sync input field with the state.
+                // when input value changes, run this.onUpdateUser
+                onChange={this.onUpdateUser}
+                value={this.state.username}
                 placeholder="Github Username"/>
             </div>
             <div className="form-group col-sm-3 col-sm-offset-4">
