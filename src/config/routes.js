@@ -10,6 +10,7 @@ var IndexRoute = ReactRouter.IndexRoute;
 var Main = require('../components/Main');
 var Home = require('../components/Home');
 var PromptContainer = require('../containers/PromptContainer');
+var ConfirmBattleContainer = require("../containers/ConfirmBattleContainer");
 
 // react-router works by mapping the url to a component.
 // we will always render Main.
@@ -22,6 +23,7 @@ var routes = (
       {/* we can pass props to Route component */}
       <Route path='playerOne' header='Player One' component={PromptContainer}/>
       <Route path='playerTwo/:playerOne' header='Player Two' component={PromptContainer}/>
+      <Route path='battle' component={ConfirmBattleContainer}/>
       <IndexRoute component={Home} />
     </Route>
   </Router>
