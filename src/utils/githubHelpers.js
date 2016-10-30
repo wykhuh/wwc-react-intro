@@ -9,17 +9,21 @@ function getUserInfo(username) {
   return axios.get('https://api.github.com/users/' + username + param);
 }
 
-getUserInfo('wykhuh')
-.then(function(res){
-  // headers - show your rate limit
-  // data - info about the user
-  console.log('github', res)
-})
-
 var helpers = {
-  getPlayersInfo: function() {
-    // fetch data from github
+  getPlayersInfo: function(players) {
+    // call getUserInfo for each player.
+    // give axios.all an array of promises. when each promises is resolved,
+    // then axios.all().then() is going to run
+    return axios.all(
+      [getUserInfo(players[0]), getUserInfo(players[1])]
+    ).then(function(info){
+      console.log(info);
+    })
   }
 };
+
+// return axios.all(players.map(function (player) {
+//   return getUserInfo(player);
+// }))
 
 module.exports = helpers;
